@@ -21,7 +21,7 @@ foreach($sobj in $sobjects){
     
     foreach($f in $descr.fields){
         
-        if($f.permissionable){
+        if($f.permissionable -Or $f.calculated -Or $f.createable -Or $f.updateable -Or $f.idLookup -Or $f.externalId -Or $f.nameField){
 
             if($sheetsNotAdded){
                 if($isNewWorkbook){
